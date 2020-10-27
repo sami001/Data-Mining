@@ -102,6 +102,7 @@ def main():
     for idx, vector in enumerate(tfidf):
         temp = 0
         for term, termFrequency in vector.items():
+            '''TF-IDF equation'''
             vector[term] = (1 + log(termFrequency, 10)) * log (N / documentFrequency.get(term, 0), 10)
             if term in postingsList:
                 postingsList[term].append([idx, vector.get(term, 0)])
